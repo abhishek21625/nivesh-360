@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Nivesh 360</title>
+    <title>Contact Us | Nivesh 360</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
@@ -30,7 +30,7 @@
                     <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="#products">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services">Blogs</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
 
                 <a href="" class="book-btn">
@@ -41,11 +41,11 @@
     </nav>
 
 
-    <section class="hero-section mb-5">
+    <section class="hero-section">
         <div class="container text-center">
 
             <!-- Heading -->
-            <h1 class="mb-3 fw-bold bc-head" data-aos="fade-up">About Us</h1>
+            <h1 class="mb-3 fw-bold bc-head" data-aos="fade-up">Contact Us</h1>
 
             <!-- Breadcrumb inside badge -->
             <div class="d-inline-block px-3 py-2 rounded-pill breadcrumb-badge" data-aos="fade-up" data-aos-delay="200">
@@ -58,7 +58,7 @@
                             <a href="#" class="text-decoration-none">Services</a>
                         </li> -->
                         <li class="breadcrumb-item active" aria-current="page">
-                            About Us
+                            Contact Us
                         </li>
                     </ol>
                 </nav>
@@ -68,36 +68,114 @@
     </section>
 
 
-
-
-    <!-- CTA Section -->
-    <section class="hero-section mb-5">
+    <section class="contact-section">
         <div class="container">
             <div class="row">
+                <!-- Left Column - Form -->
                 <div class="col-lg-6">
-                    <div class="cta-content">
-                        <h2 class="section-title fw-800 mb-3" data-aos="fade-right" data-aos-delay="">Get Your Free
-                            Quote Today<br>to Join with Others</h2>
-                        <p class="text-muted mb-4" data-aos="fade-right" data-aos-delay="100">
-                            Join thousands of satisfied investors who have transformed their financial futures. Start
-                            your
-                            journey to wealth today with our expert guidance.
-                        </p>
-                        <a href="" class="book-btn" data-aos="fade-right" data-aos-delay="200">
-                            Call Us Now <div class="btn-icon"><i class="fas fa-arrow-right"></i></div>
-                        </a>
+                    <div class="form-section" data-aos="fade-right" data-aos-delay="100">
+                        <span class="badge-label">Get in Touch</span>
+                        <h1 class="form-title">Let's Chat, Reach Out to Us</h1>
+                        <p class="form-subtitle">Have questions or feedback? We're here to help. Send us a message, and
+                            we'll respond within 24 hours.</p>
+
+                        <div class="success-message" id="successMessage">
+                            <i class="fas fa-check-circle"></i> Message sent successfully! We'll be in touch soon.
+                        </div>
+
+                        <form id="contactForm">
+                            <div class="row-two-cols">
+                                <div class="form-group">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" class="form-control" id="firstName" placeholder="First name"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" class="form-control" id="lastName" placeholder="Last name"
+                                        required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" class="form-control" id="email" placeholder="Email address"
+                                    required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea class="form-control" id="message" placeholder="Leave us a message"
+                                    required></textarea>
+                            </div>
+
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="privacy" required>
+                                <label class="form-check-label" for="privacy">
+                                    I agree to our friendly privacy policy
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn-submit" id="submitBtn">Send Message</button>
+                        </form>
                     </div>
                 </div>
 
+                <!-- Right Column - Info -->
                 <div class="col-lg-6">
-                    <div class="d-flex justify-content-center">
-                        <img src="images/Calling-amico.svg" alt="" class="w-50" data-aos="fade-left"
-                            data-aos-delay="200">
+                    <div class="info-section">
+                        <div class="profile-image" data-aos="fade-left" data-aos-delay="100">
+                            <img src="images/Calling-amico.svg" class="img-fluid" alt="">
+                        </div>
+
+                        <div class="contact-card" data-aos="fade-left" data-aos-delay="200">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-content">
+                                <h5>Email</h5>
+                                <p>care@vedantpainclinic.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-card" data-aos="fade-left" data-aos-delay="300">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-content">
+                                <h5>Phone</h5>
+                                <p>+91 8171244512</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-card" data-aos="fade-left" data-aos-delay="400">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-content">
+                                <h5>Address</h5>
+                                <p>House No. 21, Sector 9, Opposite Sector 9 Huda Market, Faridabad, Haryana - 121006
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Map Section -->
+            <div class="map-wrapper" data-aos="fade-up" data-aos-delay="400">
+                <h3><i class="fas fa-location-dot"></i> Find Us on Map</h3>
+                <div id="map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14041.544950111791!2d77.33104!3d28.3774!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cddc837bed5df%3A0xa1c9670cdb264f7a!2sVedant%20Pain%20Management%20Clinic!5e0!3m2!1sen!2sin!4v1763109196689!5m2!1sen!2sin"
+                        width="100%" height="450px" style="border-radius: 10px; border: 2px solid #e0e0e0;"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
         </div>
+
     </section>
+
 
     <!-- Footer -->
     <footer class="footer-section pt-5 pb-4">
@@ -214,6 +292,7 @@
     </script>
 
     <script src="js/script.js"></script>
+
 </body>
 
 </html>
