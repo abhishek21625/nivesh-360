@@ -1,3 +1,12 @@
+// NAVBAR ACTIVE LINK
+
+const currentPage = window.location.pathname.split("/").pop();
+document.querySelectorAll(".nav-link").forEach((link) => {
+  if (link.getAttribute("href") === currentPage) {
+    link.classList.add("active");
+  }
+});
+
 // Smooth scroll on navigation links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
@@ -500,4 +509,44 @@ filterButtons.forEach((button) => {
 document.querySelectorAll(".blog-card").forEach((card) => {
   card.addEventListener("mouseenter", () => card.classList.add("shadow-lg"));
   card.addEventListener("mouseleave", () => card.classList.remove("shadow-lg"));
+});
+
+// FAQ SECTION
+
+// FAQ Accordion Functionality
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach((item) => {
+  const question = item.querySelector(".faq-question");
+
+  question.addEventListener("click", () => {
+    // Close all other items
+    faqItems.forEach((otherItem) => {
+      if (otherItem !== item) {
+        otherItem.classList.remove("active");
+      }
+    });
+
+    // Toggle current item
+    item.classList.toggle("active");
+
+    // Smooth scroll to item if opening
+    if (item.classList.contains("active")) {
+      setTimeout(() => {
+        item.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 300);
+    }
+  });
+});
+
+// Add smooth scroll behavior to CTA button
+document.querySelector(".cta-button").addEventListener("click", function (e) {
+  e.preventDefault();
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
 });

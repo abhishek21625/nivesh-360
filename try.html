@@ -1,288 +1,234 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hero Section — Responsive</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kidney Service Details | Premium UI</title>
 
-  <!-- Bootstrap 5 CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <style>
-    :root{
-      --bg:#fbfcfd;
-      --card:#ffffff;
-      --muted:#6b7280;
-      --accent:#071127;
-      --pill-bg: #f1f6f9;
-      --green:#32c48d;
-      --yellow:#ffd23f;
-      --purple:#c7b7ff;
-      --glass: rgba(255,255,255,0.8);
-    }
-
-    body{
-      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
-      color: var(--accent);
-      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      padding: 40px 20px;
-    }
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
     <style>
-    .hero-section {
-        padding: 60px 0;
-        position: relative;
-    }
-
-    .hero-img-big {
-        border-radius: 22px;
-        overflow: hidden;
-        box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-    }
-
-    .hero-img-big img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-    }
-
-    .hero-text h1 {
-        font-weight: 700;
-        font-size: 38px;
-        line-height: 1.2;
-        color: #071127;
-    }
-
-    .hero-text p {
-        color: #6b7280;
-        font-size: 16px;
-        max-width: 520px;
-    }
-
-    .btn-hero {
-        background: #071127;
-        color: #fff;
-        padding: 12px 28px;
-        border-radius: 10px;
-        font-size: 15px;
-        border: none;
-    }
-
-    /* Small overlapping image */
-    .small-img-box {
-        width: 280px;
-        height: 180px;
-        background: #fff;
-        border-radius: 18px;
-        box-shadow: 0 6px 22px rgba(0,0,0,0.08);
-        overflow: hidden;
-        border: 1px solid rgba(0,0,0,0.08);
-    }
-
-    .small-img-box img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    /* Stats Bar */
-    .stats-box {
-        background: #f5f7fa;
-        padding: 22px 35px;
-        border-radius: 16px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 30px;
-        margin-top: 45px;
-    }
-
-    .stat-number {
-        font-size: 32px;
-        font-weight: 800;
-        color: #071127;
-    }
-
-    .stat-label {
-        background: #e9f9ee;
-        padding: 7px 14px;
-        border-radius: 999px;
-        font-size: 12px;
-        color: #0f9f4f;
-        margin-top: 6px;
-        display: inline-block;
-    }
-
-    .divider {
-        width: 1px;
-        height: 45px;
-        background: rgba(0,0,0,0.08);
-    }
-
-    @media (max-width: 991px) {
-        .stats-box {
-            flex-direction: column;
-            text-align: center;
-            gap: 18px;
+        body {
+            background: #f7f9fc;
+            font-family: "Poppins", sans-serif;
         }
-        .divider {
-            display: none;
+
+        /* Sidebar */
+        .service-sidebar {
+            background: #fff;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 20px;
         }
-        .small-img-box {
-            margin-top: 20px;
+
+        .service-sidebar a {
+            display: block;
+            padding: 12px 15px;
+            margin-bottom: 8px;
+            border-radius: 10px;
+            font-weight: 500;
+            color: #333;
+            transition: 0.3s;
+        }
+
+        .service-sidebar a:hover,
+        .service-sidebar a.active {
+            background: #e8f5ff;
+            color: #007bff;
+            transform: translateX(4px);
+        }
+
+        /* Main Content Card */
+        .content-card {
+            background: #fff;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+        }
+
+        .content-card h2 {
+            font-weight: 700;
+            color: #1b3358;
+        }
+
+        .content-card ul li {
+            margin-bottom: 6px;
+            line-height: 1.7;
+        }
+
+        /* Accordion */
+        .accordion-button {
+            background: #f1f6ff;
+            font-weight: 600;
+            border-radius: 10px !important;
+        }
+
+        /* CTA Box */
+        .cta-box {
+            background: linear-gradient(135deg,#0048b4,#007bfd);
+            color: #fff;
+            padding: 25px;
+            border-radius: 20px;
+            margin-top: 40px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+        }
+
+        .cta-box .btn {
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+        .service-img {
             width: 100%;
-            height: 230px;
+            border-radius: 20px;
+            height: 320px;
+            object-fit: cover;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
         }
-    }
-</style>
+    </style>
+</head>
 
-<section class="hero-section">
+<body>
+
+<section class="py-5">
     <div class="container">
-        <div class="row align-items-center">
-            
-            <!-- LEFT IMAGE -->
-            <div class="col-lg-6 mb-4">
-                <div class="hero-img-big">
-                    <img src="/mnt/data/712702d8-e8b5-4da1-91a7-308730d534c4.png" alt="">
+        <div class="row g-4">
+
+            <!-- Sidebar -->
+            <div class="col-lg-3">
+                <div class="service-sidebar">
+                    <h5 class="fw-bold mb-3">All Services</h5>
+                    <a href="#" class="active"><i class="fa-solid fa-kidneys me-2"></i> Kidney Disease</a>
+                    <a href="#"><i class="fa-solid fa-heart-pulse me-2"></i> Acute Kidney Injury</a>
+                    <a href="#"><i class="fa-solid fa-virus me-2"></i> Chronic Kidney Diseases</a>
+                    <a href="#"><i class="fa-solid fa-prescription-bottle-medical me-2"></i> Dialysis</a>
+                    <a href="#"><i class="fa-solid fa-dna me-2"></i> Nephrotic Syndrome</a>
+                    <a href="#"><i class="fa-solid fa-microscope me-2"></i> Renal Biopsy</a>
+                    <a href="#"><i class="fa-solid fa-hospital-user me-2"></i> Kidney Transplant</a>
+
+                    <hr>
+
+                    <div class="text-center">
+                        <p class="fw-bold mb-2">Book Appointment</p>
+                        <a href="tel:+91XXXXXXXXXX" class="btn btn-success w-100">
+                            <i class="fa-solid fa-phone me-2"></i> +91 9654200801
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <!-- RIGHT CONTENT -->
-            <div class="col-lg-6">
-                
-                <div class="hero-text mb-4">
-                    <h1>
-                        Unlocking Financial Success
-                        Through Deep Understanding of <br>Your People
-                    </h1>
+            <!-- Main Content -->
+            <div class="col-lg-9">
+                <img src="images/imgi_15_68edd19eba8cf3b83f5a5142_offer-image (2).webp" class="service-img mb-4" alt="Kidney Image">
 
+                <div class="content-card">
+
+                    <h2 class="mb-3">Kidney Health Information</h2>
                     <p>
-                        Success in our financial approach goes beyond numbers, focusing
-                        on understanding individuals. Explore a strategy that unlocks prosperity
-                        by delving into the intricacies of your people.
+                        The Kidney Dialysis Centre in Faridabad offers vital services for individuals with kidney-related issues.
+                        Kidneys act as essential filtration organs. They purify blood, maintain water balance,
+                        regulate electrolytes, and support overall body health.
                     </p>
+
+                    <h4 class="mt-4">Functions of the Kidneys:</h4>
+                    <ul>
+                        <li>Excretion of nitrogenous waste products.</li>
+                        <li>Maintaining Hemoglobin (Hb) level.</li>
+                        <li>Maintaining Calcium level for healthy bones.</li>
+                    </ul>
+
+                    <h4 class="mt-4">What do healthy kidneys perform?</h4>
+                    <ul>
+                        <li>Balance body water levels.</li>
+                        <li>Remove toxins and waste products.</li>
+                        <li>Maintain chemical balance in the body.</li>
+                    </ul>
+
+                    <h4 class="mt-4">How kidneys work:</h4>
+                    <ol>
+                        <li>Renal arteries supply blood to the kidneys.</li>
+                        <li>Nephrons filter blood.</li>
+                        <li>Waste products form urine.</li>
+                        <li>Clean blood returns to the body.</li>
+                        <li>Urine travels to the bladder through ureters.</li>
+                        <li>Bladder releases urine from the body.</li>
+                    </ol>
+
+                    <hr class="my-4">
+
+                    <!-- Accordion Section -->
+                    <div class="accordion" id="serviceAccordion">
+
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#cause">
+                                    Causes of Kidney Disease
+                                </button>
+                            </h2>
+                            <div id="cause" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    High BP, diabetes, infections, autoimmune diseases, etc.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#symptoms">
+                                    Symptoms
+                                </button>
+                            </h2>
+                            <div id="symptoms" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    Swelling, fatigue, changes in urination, nausea, shortness of breath.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#prevention">
+                                    Prevention
+                                </button>
+                            </h2>
+                            <div id="prevention" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    Stay hydrated, maintain BP, avoid salt, control sugar.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
 
-                <button class="btn-hero mb-4">Get Started</button>
-
-                <!-- SMALL IMAGE -->
-                <div class="d-flex justify-content-start justify-content-lg-end mb-4">
-                    <div class="small-img-box">
-                        <img src="/mnt/data/imgi_39_utDOGB6FiJsHBOrJeWk8pPhgN3s.png" alt="">
+                <!-- CTA BOX -->
+                <div class="cta-box mt-5 d-flex justify-content-between align-items-center flex-wrap">
+                    <div>
+                        <h4 class="fw-bold mb-1">Need an expert opinion?</h4>
+                        <p class="mb-0">Consult India’s leading nephrologist for a personalized plan.</p>
                     </div>
-                </div>
-
-                <!-- STATS -->
-                <div class="stats-box">
-
-                    <div class="stat text-center">
-                        <div class="stat-number">10+</div>
-                        <div class="stat-label">Years in the Field</div>
+                    <div>
+                        <a href="#" class="btn btn-light me-2"><i class="fa-solid fa-phone me-1"></i> Call</a>
+                        <a href="#" class="btn btn-outline-light"><i class="fa-solid fa-envelope me-1"></i> Email</a>
                     </div>
-
-                    <div class="divider"></div>
-
-                    <div class="stat text-center">
-                        <div class="stat-number">99%</div>
-                        <div class="stat-label" style="background:#fff5cc;color:#ffb400;">Grow Fast</div>
-                    </div>
-
-                    <div class="divider"></div>
-
-                    <div class="stat text-center">
-                        <div class="stat-number">5M+</div>
-                        <div class="stat-label" style="background:#f3eaff;color:#a78bfa;">Current Users</div>
-                    </div>
-
                 </div>
 
             </div>
 
         </div>
     </div>
-</section>  
+</section>
 
-  <!-- Bootstrap JS and dependencies -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-  <script>
-    // Count-up animation for the stats using IntersectionObserver
-    (function() {
-      const statEls = document.querySelectorAll('.stat-number');
-
-      function animateCount(el, target, suffix) {
-        const duration = 1400;
-        const start = 0;
-        const startTime = performance.now();
-
-        // for large numbers, adjust formatting
-        function step(now) {
-          const elapsed = now - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
-
-          let current = Math.floor(start + (target - start) * eased);
-
-          // formatting for large counts (e.g., 5,000,000 -> 5M)
-          if (target >= 1000000) {
-            // show compact (like 5M+)
-            const millions = (current / 1000000);
-            if (progress === 1) {
-              el.textContent = Math.round(millions) + (suffix || '');
-            } else {
-              el.textContent = (millions.toFixed(1).replace(/\.0$/,'')) + (suffix || '');
-            }
-          } else {
-            el.textContent = current + (suffix || '');
-          }
-
-          if (progress < 1) requestAnimationFrame(step);
-          else {
-            // ensure final exact value
-            if (target >= 1000000) {
-              el.textContent = Math.round(target / 1000000) + (suffix || '');
-            } else {
-              el.textContent = target + (suffix || '');
-            }
-          }
-        }
-        requestAnimationFrame(step);
-      }
-
-      if ('IntersectionObserver' in window) {
-        const io = new IntersectionObserver((entries, obs) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              const el = entry.target;
-              const target = Number(el.getAttribute('data-target')) || 0;
-              const suffix = el.getAttribute('data-suffix') || '';
-              animateCount(el, target, suffix);
-              obs.unobserve(el);
-            }
-          });
-        }, { threshold: 0.4 });
-
-        statEls.forEach(el => io.observe(el));
-      } else {
-        // fallback: animate immediately
-        statEls.forEach(el => {
-          const target = Number(el.getAttribute('data-target')) || 0;
-          const suffix = el.getAttribute('data-suffix') || '';
-          animateCount(el, target, suffix);
-        });
-      }
-
-      // Smooth scroll to CTA example (small JS to show interactivity)
-      document.getElementById('getStartedBtn').addEventListener('click', function(e){
-        e.preventDefault();
-        // simple feedback
-        this.innerText = 'Loading…';
-        setTimeout(()=> this.innerText = 'Get Started', 900);
-        // In a real site this could scroll to a form or open a modal
-      });
-
-    })();
-  </script>
 </body>
 </html>
